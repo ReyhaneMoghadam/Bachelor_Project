@@ -1,0 +1,287 @@
+# Importing all necessary libraries
+import os
+import pickle
+import numpy as np
+from PIL import Image
+from random import shuffle
+import matplotlib.pyplot as plt
+import tensorflow.keras.backend as K
+from keras.utils import load_img, img_to_array
+from sklearn.metrics import classification_report
+from tensorflow.keras.models import Model, Sequential
+from tensorflow.keras.layers import Dense, Flatten, Dropout
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.utils import to_categorical, load_img, img_to_array
+
+from tensorflow.keras.applications.vgg19 import VGG19
+
+# Access to Google Drive (in order to import dataset from)
+from google.colab import drive
+drive.mount('/content/drive')
+
+# Path to the folder in Google Drive
+train_data_dir = "drive/My Drive/Bachelor_Project/Data_Genre_ModelCustomize/Train"
+validation_data_dir = "drive/My Drive/Bachelor_Project/Data_Genre_ModelCustomize/Validation"
+test_data_dir = "drive/My Drive/Bachelor_Project/Data_Genre_ModelCustomize/Test"
+
+# Part-1
+# Every image in the dataset is of the size 224x224
+INPUT_WIDTH = 224
+INPUT_HEIGHT = 224
+target_size = (INPUT_WIDTH, INPUT_HEIGHT)
+# Define the categories
+num_categories = 15
+categories = ["Scientific_Content", "Society", "Adventure_Stories", "Child_Poetry",
+              "Child_Real_Life_Stories", "Biography", "Animal_Stories", "Reference",
+              "Historical_Stories", "Legends", "Riddle", "Lullaby", "Entertainment",
+              "Humorous_Stories", "Inventions_and_Discoveries"]
+# The total number of train/validation samples
+nb_train_samples = 3627
+nb_validation_samples = 456 # (Test samples have the same size)
+
+# List all files in the directory
+files = os.listdir(train_data_dir)
+for file in files:
+    print(file)
+
+# Part-2
+def fetch_images(cat, directory):
+    images_path = [f"{directory}/{cat}/{f}" for f in os.listdir(f"{directory}/{cat}") if
+                   f.endswith(".jpeg") or f.endswith(".jpg")]
+    preprocessed = [preprocess_image(x) for x in images_path]
+    return preprocessed
+
+def preprocess_image(image_path):
+    img = load_img(image_path, target_size=target_size)
+    img = img.convert("RGB")
+
+    img = img_to_array(img)
+    img = np.expand_dims(img, axis=0)
+    return img
+
+def get_dataset(train, test):
+    train_images  = []
+    train_labels  = []
+    test_images   = []
+    test_labels   = []
+
+    for i, category in enumerate(categories):
+        train_images_cat = fetch_images(category, train)
+        test_images_cat = fetch_images(category, test)
+
+        train_labels_cat = to_categorical(np.full(len(train_images_cat), i), num_categories)
+        test_labels_cat = to_categorical(np.full(len(test_images_cat), i), num_categories)
+
+        train_images.extend(train_images_cat)
+        test_images.extend(test_images_cat)
+        train_labels.extend(train_labels_cat)
+        test_labels.extend(test_labels_cat)
+
+    train_images = np.array(train_images)
+    train_labels = np.array(train_labels)
+    test_images = np.array(test_images)
+    test_labels = np.array(test_labels)
+
+    train_images = np.squeeze(train_images, axis=1)
+    test_images = np.squeeze(test_images, axis=1)
+    # shuffle elements in train dataset
+    combined = list(zip(train_images, train_labels))
+    shuffle(combined)
+    train_images, train_labels = zip(*combined)
+
+    return np.array(train_images), np.array(train_labels), test_images, test_labels
+
+# Part-3
+
+class BookCoverVgg19:
+    def __init__(self, INPUT_WIDTH, INPUT_HEIGHT):
+        self.input_shape = (INPUT_WIDTH, INPUT_HEIGHT, 3)
+        self.classes = 15
+        self.model = None
+        self.build_model()
+
+    def build_model(self):
+        vgg19 = VGG19(weights='imagenet', input_shape=self.input_shape, classes=self.classes, include_top=False)
+        '''
+        for layer in vgg16.layers[-50:]:  # Experiment with the number of layers to unfreeze
+            layer.trainable = True
+        '''
+
+        x = Flatten()(vgg19.output)
+        x = Dense(256, activation='relu')(x)
+        x = Dropout(0.5)(x)
+        predictions = Dense(self.classes, activation='softmax')(x)
+
+        self.model = Model(inputs=vgg19.input, outputs=predictions)
+        self.model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+# Part-4
+from keras.callbacks import Callback
+
+accuracy_threshold = 98e-2
+class StopByAccuracyCallback(Callback):
+    def on_epoch_end(self, epoch, logs=None):
+        if logs.get('accuracy') >= accuracy_threshold:
+            print('Accuracy has reach = %2.2f%%' % (logs['accuracy'] * 100), 'training has been stopped.')
+            self.model.stop_training = True
+
+
+
+def get_generators(train_images, train_labels, batch_size=32):
+    # Define the augmentation parameters
+    # Apply the augmentation to the training data
+    train_datagen = ImageDataGenerator(
+        rescale=1. / 255,
+        rotation_range=20,
+        horizontal_flip=True,
+        shear_range=0.2,
+        fill_mode='wrap',
+        validation_split=0.2
+    )
+
+    # Apply the augmentation to the training data
+    train_generator = train_datagen.flow(
+        train_images,
+        train_labels,
+        batch_size=batch_size,
+        shuffle=True,
+        subset='training'
+    )
+
+    validation_generator = train_datagen.flow(
+        train_images,
+        train_labels,
+        batch_size=batch_size,
+        shuffle=True,
+        subset='validation'
+    )
+
+    return train_generator, validation_generator
+
+def train_vgg19(train_images, train_labels) -> Model:
+    vgg19 = BookCoverVgg19(INPUT_WIDTH, INPUT_HEIGHT)
+    model = vgg19.model
+    # model.summary()
+
+    train_generator, validation_generator = get_generators(train_images, train_labels)
+
+    model.fit(
+        train_generator,
+        steps_per_epoch=len(train_generator),
+        epochs=50,
+        validation_data=validation_generator,
+        validation_steps=len(validation_generator),
+        callbacks=[StopByAccuracyCallback()]
+    )
+
+    return model
+
+train_images, train_labels, test_images, test_labels = get_dataset(train_data_dir, test_data_dir)
+model = train_vgg19(train_images, train_labels)
+
+loss, accuracy = model.evaluate(test_images, test_labels, verbose=0)
+print(f"Test Loss: {loss:.4f}")
+print(f"Test Accuracy: {accuracy:.4f}")
+
+# Save the model for further usage
+import pickle
+# Path where the model will be saved
+model_path = 'VGG19_model.pkl'
+
+# Save the model using pickle
+with open(model_path, 'wb') as f:
+    pickle.dump(model, f)
+
+print(f"Model saved to {model_path}")
+
+# Load the model using pickle
+with open(model_path, 'rb') as f:
+    loaded_model = pickle.load(f)
+
+print("Model loaded successfully!")
+
+'''
+# Additional changes to our pictures
+# 1 - Scaling
+# 2 - Color Jitter
+# 3 - Random Cropping
+
+def get_generators(train_images, train_labels, batch_size=32):
+    # Define the augmentation parameters
+    datagen = ImageDataGenerator(
+        rescale=1. / 255,
+        rotation_range=20,
+        horizontal_flip=True,
+        shear_range=0.2,
+        fill_mode='wrap',
+        zoom_range=0.2,  # Added Scaling
+        brightness_range=[0.8, 1.2],  # Added Color Jitter
+        contrast_range=[0.8, 1.2],    # Added Color Jitter
+        saturation_range=[0.8, 1.2],  # Added Color Jitter
+        width_shift_range=0.2,  # Added Random Cropping
+        height_shift_range=0.2,  # Added Random Cropping
+        validation_split=0.2
+    )
+'''
+
+"""**Another way to implement the code - VGG19**"""
+
+import tensorflow as tf
+from tensorflow.keras.preprocessing.image import load_img, img_to_array
+from tensorflow.keras.applications.vgg19 import preprocess_input, decode_predictions, VGG19
+from tensorflow.keras import layers, models
+
+# Load dataset
+train_dataset = tf.keras.preprocessing.image_dataset_from_directory(
+    train_data_dir,
+    validation_split=0.2,
+    subset="training",
+    seed=123,
+    image_size=(224, 224),
+    batch_size=32
+)
+
+validation_dataset = tf.keras.preprocessing.image_dataset_from_directory(
+    validation_data_dir,
+    validation_split=0.2,
+    subset="validation",
+    seed=123,
+    image_size=(224, 224),
+    batch_size=32
+)
+
+# Preprocess the dataset
+AUTOTUNE = tf.data.experimental.AUTOTUNE
+train_dataset = train_dataset.prefetch(buffer_size=AUTOTUNE)
+validation_dataset = validation_dataset.prefetch(buffer_size=AUTOTUNE)
+
+# Load the pre-trained VGG19 model
+base_model = VGG19(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
+base_model.trainable = False  # Freeze the base model
+
+# Add custom top layers
+model = models.Sequential([
+    base_model,
+    layers.Flatten(),
+    layers.Dense(256, activation='relu'),
+    layers.Dropout(0.5),
+    layers.Dense(15, activation='softmax')  # Number of classes
+])
+
+# Compile the model
+model.compile(
+    optimizer='adam',
+    loss='sparse_categorical_crossentropy',
+    metrics=['accuracy']
+)
+
+# Train the model
+history = model.fit(
+    train_dataset,
+    validation_data=validation_dataset,
+    epochs=50
+)
+
+# Evaluate the model
+loss, accuracy = model.evaluate(validation_dataset)
+print(f'Validation accuracy: {accuracy:.2f}')
