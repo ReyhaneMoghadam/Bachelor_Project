@@ -1,0 +1,181 @@
+Extracted download/Dataset_Genre_224x224_SingleLabel_Customized.zip to download/
+Downloading: "https://download.pytorch.org/models/convnext_tiny-983f1562.pth" to /root/.cache/torch/hub/checkpoints/convnext_tiny-983f1562.pth
+100%|██████████| 109M/109M [02:34<00:00, 742kB/s]
+Epoch 1/50
+train Loss: 1.8222 Weighted F1: 0.2890
+val Loss: 1.8871 Weighted F1: 0.2351
+Epoch 2/50
+train Loss: 1.1436 Weighted F1: 0.5006
+val Loss: 1.2431 Weighted F1: 0.4134
+Epoch 3/50
+train Loss: 0.9097 Weighted F1: 0.6067
+val Loss: 1.1371 Weighted F1: 0.4927
+Epoch 4/50
+train Loss: 0.7255 Weighted F1: 0.6965
+val Loss: 1.0933 Weighted F1: 0.5689
+Epoch 5/50
+train Loss: 0.5888 Weighted F1: 0.7438
+val Loss: 1.5238 Weighted F1: 0.4155
+Epoch 6/50
+train Loss: 0.5213 Weighted F1: 0.7867
+val Loss: 1.0404 Weighted F1: 0.6035
+Epoch 7/50
+train Loss: 0.4503 Weighted F1: 0.8151
+val Loss: 1.1299 Weighted F1: 0.5357
+Epoch 8/50
+train Loss: 0.4454 Weighted F1: 0.8177
+val Loss: 0.9663 Weighted F1: 0.6250
+Epoch 9/50
+train Loss: 0.3584 Weighted F1: 0.8522
+val Loss: 1.1786 Weighted F1: 0.5745
+Epoch 10/50
+train Loss: 0.3167 Weighted F1: 0.8692
+val Loss: 1.0353 Weighted F1: 0.6400
+Epoch 11/50
+train Loss: 0.2847 Weighted F1: 0.8747
+val Loss: 1.0643 Weighted F1: 0.6043
+Epoch 12/50
+train Loss: 0.2572 Weighted F1: 0.8868
+val Loss: 1.1031 Weighted F1: 0.6160
+Epoch 13/50
+train Loss: 0.2162 Weighted F1: 0.9131
+val Loss: 1.1884 Weighted F1: 0.6049
+Epoch 14/50
+train Loss: 0.2490 Weighted F1: 0.9004
+val Loss: 1.1432 Weighted F1: 0.6222
+Epoch 15/50
+train Loss: 0.1854 Weighted F1: 0.9217
+val Loss: 1.1931 Weighted F1: 0.6505
+Epoch 16/50
+train Loss: 0.1455 Weighted F1: 0.9474
+val Loss: 1.0799 Weighted F1: 0.6723
+Epoch 17/50
+train Loss: 0.1420 Weighted F1: 0.9343
+val Loss: 1.1542 Weighted F1: 0.5948
+Epoch 18/50
+train Loss: 0.1343 Weighted F1: 0.9427
+val Loss: 1.0421 Weighted F1: 0.6941
+Epoch 19/50
+train Loss: 0.1431 Weighted F1: 0.9432
+val Loss: 1.1575 Weighted F1: 0.6687
+Epoch 20/50
+train Loss: 0.1895 Weighted F1: 0.9296
+val Loss: 1.1450 Weighted F1: 0.6691
+Epoch 21/50
+train Loss: 0.1218 Weighted F1: 0.9527
+val Loss: 1.0829 Weighted F1: 0.6831
+Epoch 22/50
+train Loss: 0.0925 Weighted F1: 0.9597
+val Loss: 1.2139 Weighted F1: 0.6735
+Epoch 23/50
+train Loss: 0.0853 Weighted F1: 0.9666
+val Loss: 1.1975 Weighted F1: 0.6610
+Epoch 24/50
+train Loss: 0.0781 Weighted F1: 0.9685
+val Loss: 1.2135 Weighted F1: 0.6682
+Epoch 25/50
+train Loss: 0.0678 Weighted F1: 0.9736
+val Loss: 1.2767 Weighted F1: 0.6559
+Epoch 26/50
+train Loss: 0.0698 Weighted F1: 0.9747
+val Loss: 1.2181 Weighted F1: 0.7009
+Epoch 27/50
+train Loss: 0.0614 Weighted F1: 0.9750
+val Loss: 1.1893 Weighted F1: 0.6898
+Epoch 28/50
+train Loss: 0.0618 Weighted F1: 0.9754
+val Loss: 1.1347 Weighted F1: 0.6932
+Epoch 29/50
+train Loss: 0.0468 Weighted F1: 0.9816
+val Loss: 1.1666 Weighted F1: 0.6898
+Epoch 30/50
+train Loss: 0.0468 Weighted F1: 0.9827
+val Loss: 1.1864 Weighted F1: 0.6739
+Epoch 31/50
+train Loss: 0.0305 Weighted F1: 0.9881
+val Loss: 1.1242 Weighted F1: 0.7189
+Epoch 32/50
+train Loss: 0.0341 Weighted F1: 0.9858
+val Loss: 1.2126 Weighted F1: 0.6880
+Epoch 33/50
+train Loss: 0.0289 Weighted F1: 0.9904
+val Loss: 1.1591 Weighted F1: 0.7265
+Epoch 34/50
+train Loss: 0.0283 Weighted F1: 0.9893
+val Loss: 1.1857 Weighted F1: 0.6907
+Epoch 35/50
+train Loss: 0.0242 Weighted F1: 0.9916
+val Loss: 1.1529 Weighted F1: 0.7186
+Epoch 36/50
+train Loss: 0.0320 Weighted F1: 0.9877
+val Loss: 1.1481 Weighted F1: 0.6946
+Epoch 37/50
+train Loss: 0.0239 Weighted F1: 0.9927
+val Loss: 1.1649 Weighted F1: 0.7206
+Epoch 38/50
+train Loss: 0.0230 Weighted F1: 0.9916
+val Loss: 1.1825 Weighted F1: 0.7109
+Epoch 39/50
+train Loss: 0.0153 Weighted F1: 0.9935
+val Loss: 1.1831 Weighted F1: 0.7299
+Epoch 40/50
+train Loss: 0.0145 Weighted F1: 0.9958
+val Loss: 1.1609 Weighted F1: 0.7323
+Epoch 41/50
+train Loss: 0.0111 Weighted F1: 0.9962
+val Loss: 1.1748 Weighted F1: 0.7283
+Epoch 42/50
+train Loss: 0.0144 Weighted F1: 0.9950
+val Loss: 1.1515 Weighted F1: 0.7303
+Epoch 43/50
+train Loss: 0.0108 Weighted F1: 0.9954
+val Loss: 1.1834 Weighted F1: 0.7205
+Epoch 44/50
+train Loss: 0.0162 Weighted F1: 0.9939
+val Loss: 1.1490 Weighted F1: 0.7300
+Epoch 45/50
+train Loss: 0.0099 Weighted F1: 0.9977
+val Loss: 1.1597 Weighted F1: 0.7251
+Epoch 46/50
+train Loss: 0.0104 Weighted F1: 0.9962
+val Loss: 1.1557 Weighted F1: 0.7247
+Epoch 47/50
+train Loss: 0.0167 Weighted F1: 0.9935
+val Loss: 1.1549 Weighted F1: 0.7243
+Epoch 48/50
+train Loss: 0.0123 Weighted F1: 0.9946
+val Loss: 1.1614 Weighted F1: 0.7222
+Epoch 49/50
+train Loss: 0.0075 Weighted F1: 0.9973
+val Loss: 1.1335 Weighted F1: 0.7324
+Epoch 50/50
+train Loss: 0.0069 Weighted F1: 0.9973
+val Loss: 1.1527 Weighted F1: 0.7178
+Best Val F1: 0.7324
+/usr/local/lib/python3.11/dist-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/usr/local/lib/python3.11/dist-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+/usr/local/lib/python3.11/dist-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Test Loss: 1.4981
+Test Accuracy: 0.6957
+Test Weighted F1: 0.6898
+Classification Report:
+                             precision    recall  f1-score   support
+                 Biography       0.76      0.91      0.83        32
+              Child_Poetry       0.68      0.66      0.67        29
+   Child_Real_Life_Stories       0.55      0.55      0.55        29
+             Entertainment       0.72      0.79      0.75        29
+        Historical_Stories       1.00      0.83      0.91        12
+          Humorous_Stories       0.60      0.77      0.67        39
+Inventions_and_Discoveries       0.50      0.29      0.36         7
+                   Legends       0.82      0.86      0.84        36
+                   Lullaby       1.00      0.67      0.80         9
+                 Reference       0.50      0.52      0.51        23
+                    Riddle       0.00      0.00      0.00         3
+        Scientific_Content       0.70      0.67      0.69        46
+                   Society       0.79      0.54      0.64        28
+                  accuracy                           0.70       322
+                 macro avg       0.66      0.62      0.63       322
+              weighted avg       0.70      0.70      0.69       322

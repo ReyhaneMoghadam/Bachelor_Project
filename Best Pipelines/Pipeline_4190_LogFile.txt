@@ -1,0 +1,105 @@
+Extracted download/Dataset_Genre_224x224_SingleLabel.zip to download/
+Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+100%|██████████| 44.7M/44.7M [00:56<00:00, 832kB/s]
+Epoch 1/25
+----------
+train Loss: 2.1029 Acc: 0.3152
+val Loss: 2.0997 Acc: 0.3316
+Epoch 2/25
+----------
+train Loss: 1.4053 Acc: 0.5388
+val Loss: 1.6689 Acc: 0.4923
+Epoch 3/25
+----------
+train Loss: 1.0191 Acc: 0.6672
+val Loss: 1.6891 Acc: 0.4796
+Epoch 4/25
+----------
+train Loss: 0.7358 Acc: 0.7675
+val Loss: 1.6083 Acc: 0.5077
+Epoch 5/25
+----------
+train Loss: 0.5113 Acc: 0.8411
+val Loss: 1.9823 Acc: 0.4974
+Epoch 6/25
+----------
+train Loss: 0.4352 Acc: 0.8635
+val Loss: 1.9773 Acc: 0.5000
+Epoch 7/25
+----------
+train Loss: 0.2857 Acc: 0.9179
+val Loss: 1.6211 Acc: 0.5612
+Epoch 8/25
+----------
+train Loss: 0.1438 Acc: 0.9698
+val Loss: 1.3838 Acc: 0.6301
+Epoch 9/25
+----------
+train Loss: 0.0873 Acc: 0.9862
+val Loss: 1.3421 Acc: 0.6352
+Epoch 10/25
+----------
+train Loss: 0.0690 Acc: 0.9880
+val Loss: 1.3301 Acc: 0.6276
+Epoch 11/25
+----------
+train Loss: 0.0542 Acc: 0.9918
+val Loss: 1.3332 Acc: 0.6378
+Epoch 12/25
+----------
+train Loss: 0.0497 Acc: 0.9925
+val Loss: 1.3191 Acc: 0.6505
+Epoch 13/25
+----------
+train Loss: 0.0438 Acc: 0.9931
+val Loss: 1.3159 Acc: 0.6454
+Epoch 14/25
+----------
+train Loss: 0.0385 Acc: 0.9943
+val Loss: 1.3278 Acc: 0.6429
+Epoch 15/25
+----------
+train Loss: 0.0356 Acc: 0.9940
+val Loss: 1.3190 Acc: 0.6505
+Epoch 16/25
+----------
+train Loss: 0.0323 Acc: 0.9953
+val Loss: 1.3200 Acc: 0.6505
+Epoch 17/25
+----------
+train Loss: 0.0334 Acc: 0.9956
+val Loss: 1.3236 Acc: 0.6378
+Epoch 18/25
+----------
+train Loss: 0.0349 Acc: 0.9953
+val Loss: 1.3301 Acc: 0.6352
+Epoch 19/25
+----------
+train Loss: 0.0362 Acc: 0.9947
+val Loss: 1.3299 Acc: 0.6403
+Epoch 20/25
+----------
+train Loss: 0.0352 Acc: 0.9953
+val Loss: 1.3222 Acc: 0.6454
+Epoch 21/25
+----------
+train Loss: 0.0351 Acc: 0.9937
+val Loss: 1.3247 Acc: 0.6454
+Epoch 22/25
+----------
+train Loss: 0.0326 Acc: 0.9969
+val Loss: 1.3299 Acc: 0.6429
+Epoch 23/25
+----------
+train Loss: 0.0309 Acc: 0.9956
+val Loss: 1.3213 Acc: 0.6480
+Epoch 24/25
+----------
+train Loss: 0.0292 Acc: 0.9962
+val Loss: 1.3179 Acc: 0.6505
+Epoch 25/25
+----------
+train Loss: 0.0291 Acc: 0.9969
+val Loss: 1.3214 Acc: 0.6505
+Best val Acc: 0.6505
+Test Accuracy: 0.5842

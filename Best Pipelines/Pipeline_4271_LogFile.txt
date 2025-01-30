@@ -1,0 +1,175 @@
+Extracted download/Dataset_Genre_224x224_SingleLabel_Customized.zip to download/
+Downloading: "https://download.pytorch.org/models/efficientnet_b7_lukemelas-c5b4e57e.pth" to /root/.cache/torch/hub/checkpoints/efficientnet_b7_lukemelas-c5b4e57e.pth
+100%|██████████| 255M/255M [06:04<00:00, 733kB/s]
+Epoch 1/50
+train Loss: 1.9119 Weighted F1: 0.2498
+val Loss: 1.6300 Weighted F1: 0.2811
+Epoch 2/50
+train Loss: 1.1667 Weighted F1: 0.5079
+val Loss: 1.4695 Weighted F1: 0.3693
+Epoch 3/50
+train Loss: 0.8881 Weighted F1: 0.6395
+val Loss: 1.3133 Weighted F1: 0.4383
+Epoch 4/50
+train Loss: 0.7144 Weighted F1: 0.7062
+val Loss: 1.2331 Weighted F1: 0.4792
+Epoch 5/50
+train Loss: 0.6498 Weighted F1: 0.7412
+val Loss: 1.2069 Weighted F1: 0.5385
+Epoch 6/50
+train Loss: 0.5583 Weighted F1: 0.7764
+val Loss: 1.0900 Weighted F1: 0.5837
+Epoch 7/50
+train Loss: 0.4090 Weighted F1: 0.8374
+val Loss: 1.1758 Weighted F1: 0.5726
+Epoch 8/50
+train Loss: 0.4070 Weighted F1: 0.8334
+val Loss: 1.1359 Weighted F1: 0.5665
+Epoch 9/50
+train Loss: 0.3401 Weighted F1: 0.8648
+val Loss: 1.1103 Weighted F1: 0.5880
+Epoch 10/50
+train Loss: 0.3472 Weighted F1: 0.8578
+val Loss: 1.1927 Weighted F1: 0.5928
+Epoch 11/50
+train Loss: 0.3238 Weighted F1: 0.8800
+val Loss: 1.1031 Weighted F1: 0.6260
+Epoch 12/50
+train Loss: 0.2500 Weighted F1: 0.8957
+val Loss: 1.1112 Weighted F1: 0.6223
+Epoch 13/50
+train Loss: 0.2369 Weighted F1: 0.9083
+val Loss: 1.1506 Weighted F1: 0.6272
+Epoch 14/50
+train Loss: 0.2015 Weighted F1: 0.9244
+val Loss: 1.1390 Weighted F1: 0.6081
+Epoch 15/50
+train Loss: 0.2066 Weighted F1: 0.9223
+val Loss: 1.2436 Weighted F1: 0.6260
+Epoch 16/50
+train Loss: 0.1971 Weighted F1: 0.9208
+val Loss: 1.2453 Weighted F1: 0.6177
+Epoch 17/50
+train Loss: 0.1631 Weighted F1: 0.9335
+val Loss: 1.1349 Weighted F1: 0.6537
+Epoch 18/50
+train Loss: 0.1500 Weighted F1: 0.9459
+val Loss: 1.1346 Weighted F1: 0.6622
+Epoch 19/50
+train Loss: 0.1666 Weighted F1: 0.9325
+val Loss: 1.1543 Weighted F1: 0.6652
+Epoch 20/50
+train Loss: 0.1442 Weighted F1: 0.9454
+val Loss: 1.2169 Weighted F1: 0.6474
+Epoch 21/50
+train Loss: 0.1195 Weighted F1: 0.9578
+val Loss: 1.2060 Weighted F1: 0.6582
+Epoch 22/50
+train Loss: 0.1094 Weighted F1: 0.9578
+val Loss: 1.1627 Weighted F1: 0.6903
+Epoch 23/50
+train Loss: 0.1014 Weighted F1: 0.9601
+val Loss: 1.0959 Weighted F1: 0.6579
+Epoch 24/50
+train Loss: 0.0989 Weighted F1: 0.9628
+val Loss: 1.0677 Weighted F1: 0.6929
+Epoch 25/50
+train Loss: 0.0833 Weighted F1: 0.9670
+val Loss: 1.1473 Weighted F1: 0.6958
+Epoch 26/50
+train Loss: 0.0835 Weighted F1: 0.9678
+val Loss: 1.1647 Weighted F1: 0.7046
+Epoch 27/50
+train Loss: 0.0794 Weighted F1: 0.9686
+val Loss: 1.2612 Weighted F1: 0.6686
+Epoch 28/50
+train Loss: 0.0659 Weighted F1: 0.9755
+val Loss: 1.2876 Weighted F1: 0.6736
+Epoch 29/50
+train Loss: 0.0749 Weighted F1: 0.9671
+val Loss: 1.1520 Weighted F1: 0.6790
+Epoch 30/50
+train Loss: 0.0647 Weighted F1: 0.9754
+val Loss: 1.1567 Weighted F1: 0.6985
+Epoch 31/50
+train Loss: 0.0501 Weighted F1: 0.9800
+val Loss: 1.2014 Weighted F1: 0.6787
+Epoch 32/50
+train Loss: 0.0430 Weighted F1: 0.9816
+val Loss: 1.2407 Weighted F1: 0.6864
+Epoch 33/50
+train Loss: 0.0417 Weighted F1: 0.9855
+val Loss: 1.2426 Weighted F1: 0.6910
+Epoch 34/50
+train Loss: 0.0403 Weighted F1: 0.9874
+val Loss: 1.2035 Weighted F1: 0.6988
+Epoch 35/50
+train Loss: 0.0349 Weighted F1: 0.9881
+val Loss: 1.2522 Weighted F1: 0.6871
+Epoch 36/50
+train Loss: 0.0355 Weighted F1: 0.9847
+val Loss: 1.2290 Weighted F1: 0.7006
+Epoch 37/50
+train Loss: 0.0361 Weighted F1: 0.9889
+val Loss: 1.2559 Weighted F1: 0.6987
+Epoch 38/50
+train Loss: 0.0262 Weighted F1: 0.9916
+val Loss: 1.2431 Weighted F1: 0.6914
+Epoch 39/50
+train Loss: 0.0233 Weighted F1: 0.9904
+val Loss: 1.2322 Weighted F1: 0.6838
+Epoch 40/50
+train Loss: 0.0279 Weighted F1: 0.9916
+val Loss: 1.2128 Weighted F1: 0.6938
+Epoch 41/50
+train Loss: 0.0277 Weighted F1: 0.9923
+val Loss: 1.2320 Weighted F1: 0.7036
+Epoch 42/50
+train Loss: 0.0278 Weighted F1: 0.9908
+val Loss: 1.2419 Weighted F1: 0.6956
+Epoch 43/50
+train Loss: 0.0230 Weighted F1: 0.9920
+val Loss: 1.2299 Weighted F1: 0.7027
+Epoch 44/50
+train Loss: 0.0316 Weighted F1: 0.9893
+val Loss: 1.2779 Weighted F1: 0.6805
+Epoch 45/50
+train Loss: 0.0263 Weighted F1: 0.9916
+val Loss: 1.2478 Weighted F1: 0.6845
+Epoch 46/50
+train Loss: 0.0201 Weighted F1: 0.9912
+val Loss: 1.2565 Weighted F1: 0.6841
+Epoch 47/50
+train Loss: 0.0178 Weighted F1: 0.9943
+val Loss: 1.2640 Weighted F1: 0.6932
+Epoch 48/50
+train Loss: 0.0254 Weighted F1: 0.9923
+val Loss: 1.2534 Weighted F1: 0.6932
+Epoch 49/50
+train Loss: 0.0174 Weighted F1: 0.9943
+val Loss: 1.2552 Weighted F1: 0.6934
+Epoch 50/50
+train Loss: 0.0251 Weighted F1: 0.9931
+val Loss: 1.2470 Weighted F1: 0.6874
+Best Val F1: 0.7046
+Test Loss: 1.1721
+Test Accuracy: 0.6801
+Test Weighted F1: 0.6750
+Classification Report:
+                             precision    recall  f1-score   support
+                 Biography       0.81      0.91      0.85        32
+              Child_Poetry       0.79      0.66      0.72        29
+   Child_Real_Life_Stories       0.56      0.48      0.52        29
+             Entertainment       0.64      0.72      0.68        29
+        Historical_Stories       0.83      0.83      0.83        12
+          Humorous_Stories       0.58      0.77      0.66        39
+Inventions_and_Discoveries       1.00      0.14      0.25         7
+                   Legends       0.77      0.83      0.80        36
+                   Lullaby       0.86      0.67      0.75         9
+                 Reference       0.42      0.48      0.45        23
+                    Riddle       1.00      0.33      0.50         3
+        Scientific_Content       0.67      0.61      0.64        46
+                   Society       0.79      0.68      0.73        28
+                  accuracy                           0.68       322
+                 macro avg       0.75      0.62      0.64       322
+              weighted avg       0.70      0.68      0.67       322
